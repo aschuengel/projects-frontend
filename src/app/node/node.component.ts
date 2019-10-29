@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {BackendService} from '../backend.service';
 import {Node} from '../node';
+import {MessageType} from '../message-type.enum';
+import {Message} from '../message';
 
 @Component({
   selector: 'app-node',
@@ -10,18 +12,16 @@ import {Node} from '../node';
 })
 export class NodeComponent implements OnInit {
   private node?: Node;
-  private oldNode?: Node;
+  private message?: Message;
 
   constructor(private route: ActivatedRoute, private backend: BackendService) {
     this.route.params.subscribe(params => {
       if (params.id) {
         backend.getNodeById(params.id).subscribe(node => {
           this.node = node;
-          this.oldNode = JSON.parse(JSON.stringify(node));
         });
       } else {
         this.node = null;
-        this.oldNode = null;
       }
     });
   }
@@ -31,9 +31,15 @@ export class NodeComponent implements OnInit {
 
   save() {
     this.backend.saveNode(this.node).subscribe(result => {
-      console.log(result);
+      this.message = {
+        text: 'Saved node',
+        type: MessageType.SUCCESS
+      };
     }, error => {
-      console.log(error);
+      this.message = {
+        text: error,
+        type: MessageType.ERROR
+      };
     });
   }
 
@@ -45,7 +51,8 @@ export class NodeComponent implements OnInit {
     this.node.type = newValue;
   }
 
-  setWeight(newValue: string) {
-    this.node.weight = parseInt(newValue, 10);
+  setWeight(newValue: number) {
+    console.log(newValue);
+    this.node.weight = newValue;
   }
 }
