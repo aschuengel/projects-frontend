@@ -1,1 +1,16 @@
-<p>main works!</p>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Type</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let node of nodes">
+      <td><a [href]="'node/' + node.id">{{node.id}}</a></td>
+      <td>{{node.name}}</td>
+      <td>{{node.type}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

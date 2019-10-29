@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {BackendService} from '../backend.service';
 import {Node} from '../node';
 
@@ -10,10 +10,14 @@ import {Node} from '../node';
 export class MainComponent implements OnInit {
   private nodes: Node[];
 
-  constructor(private backend: BackendService) { }
+  constructor(private backend: BackendService) {
+  }
 
   ngOnInit() {
-    this.backend.getNodes().subscribe(nodes => {this.nodes = nodes});
+    this.backend.getNodes().subscribe(nodes => {
+      this.nodes = nodes;
+      console.log(nodes);
+    });
   }
 
 }

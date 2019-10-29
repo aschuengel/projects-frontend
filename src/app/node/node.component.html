@@ -1,1 +1,30 @@
-<p>node works!</p>
+<div class="container">
+  <h1>Node {{node?.id}}</h1>
+  <form>
+    <div class="form-group">
+      <label for="id">Id</label>
+      <input type="text" class="form-control" id="id" placeholder="Id of the node" [value]="node?.id"
+             readonly>
+    </div>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" id="name" placeholder="Name of the node" [value]="node?.name"
+             (change)="setName($event.target.value)">
+    </div>
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select class="form-control" id="type" [value]="node?.type" (select)="setType($event.target.value)">
+        <option *ngFor="let type of backend.getNodeTypes()">{{type}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="weight">Weight</label>
+      <select class="form-control" id="weight" [value]="node?.weight?.toString(10)"
+              (select)="setWeight($event.target.value)">
+        <option *ngFor="let weight of backend.getNodeWeights()"
+                [value]="weight.value.toString(10)">{{weight.name}}</option>
+      </select>
+    </div>
+    <button type="button" class="btn btn-primary" (click)="save()">Save</button>
+  </form>
+</div>
