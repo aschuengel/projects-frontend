@@ -1,19 +1,21 @@
+<app-navbar></app-navbar>
 <div class="container">
-  <h1>Nodes</h1>
   <button type="button" class="btn-success btn btn-sm">Add</button>
   <p>
-    <table class="table table-striped">
-      <thead>
+  <table class="table table-striped">
+    <thead>
+    <tr>
       <th>Id</th>
       <th>Name</th>
       <th>Type</th>
-      </thead>
-      <tbody>
-      <tr *ngFor="let node of nodes">
-        <td><a [href]="'node/' + node.id">{{node.id}}</a></td>
-        <td>{{node.name}}</td>
-        <td>{{node.type}}</td>
-      </tr>
-      </tbody>
-    </table>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let node of nodes">
+      <td><a [href]="'node/' + node.id">{{node.id}}</a></td>
+      <td>{{node.name}}</td>
+      <td>{{node.type}}</td>
+    </tr>
+    </tbody>
+  </table>
 </div>

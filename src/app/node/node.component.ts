@@ -2,8 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {BackendService} from '../backend.service';
 import {Node} from '../node';
-import {MessageType} from '../message-type.enum';
-import {Message} from '../message';
+import * as uuid from 'uuid';
+import {ToastService} from '../toast.service';
 
 @Component({
   selector: 'app-node',
@@ -12,16 +12,25 @@ import {Message} from '../message';
 })
 export class NodeComponent implements OnInit {
   private node?: Node;
-  private message?: Message;
 
-  constructor(private route: ActivatedRoute, private backend: BackendService) {
+  constructor(private route: ActivatedRoute,
+              private backend: BackendService,
+              private toast: ToastService) {
     this.route.params.subscribe(params => {
       if (params.id) {
         backend.getNodeById(params.id).subscribe(node => {
           this.node = node;
+          if (node === null) {
+            this.toast.add('Error', `Invalid node ${params.id}`);
+          }
         });
       } else {
-        this.node = null;
+        this.node = {
+          id: uuid.v4(),
+          type: null,
+          name: null,
+          weight: 1
+        };
       }
     });
   }
@@ -30,16 +39,16 @@ export class NodeComponent implements OnInit {
   }
 
   save() {
+    if (this.node.name === null) {
+      return;
+    }
+    if (this.node.type === null) {
+      return;
+    }
     this.backend.saveNode(this.node).subscribe(result => {
-      this.message = {
-        text: 'Saved node',
-        type: MessageType.SUCCESS
-      };
+      this.toast.add('Success', 'Save node');
     }, error => {
-      this.message = {
-        text: error,
-        type: MessageType.ERROR
-      };
+      this.toast.add('Error', JSON.stringify(error));
     });
   }
 
