@@ -1,0 +1,4 @@
+<ngb-alert
+  *ngFor="let message of messages.messages" (close)="messages.remove(message)" [type]="message.type.toString().toLowerCase()">
+  {{message.text}}
+</ngb-alert>

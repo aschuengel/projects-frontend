@@ -1,0 +1,117 @@
+[
+  {
+    "x": 222,
+    "y": 230,
+    "text": "Multichannel Interaction & Commerce"
+  },
+  {
+    "x": 295,
+    "y": 184,
+    "text": "Customer Portal & Apps"
+  },
+  {
+    "x": 519,
+    "y": 184,
+    "text": "Social Networks"
+  },
+  {
+    "x": 641,
+    "y": 194,
+    "text": "Customer-facing & Public APIs"
+  },
+  {
+    "x": 970,
+    "y": 184,
+    "text": "Enterprise-run Ecosystems"
+  },
+  {
+    "x": 1070,
+    "y": 240,
+    "text": "API Management Software"
+  },
+  {
+    "x": 1088,
+    "y": 304,
+    "text": "Industry & Partner-run Ecosystems"
+  },
+  {
+    "x": 1075,
+    "y": 380,
+    "text": "Partner-facing Public APIs"
+  },
+  {
+    "x": 1089,
+    "y": 424,
+    "text": "Supplier Portal & Apps"
+  },
+  {
+    "x": 1072,
+    "y": 509,
+    "text": "Employee Collaboration & Workplace"
+  },
+  {
+    "x": 974,
+    "y": 510,
+    "text": "Back-office Systems"
+  },
+  {
+    "x": 882,
+    "y": 504,
+    "text": "Core Systems"
+  },
+  {
+    "x": 784,
+    "y": 454,
+    "text": "Business & Operational Analytics"
+  },
+  {
+    "x": 778,
+    "y": 304,
+    "text": "Partner & Supplier Analytics"
+  },
+  {
+    "x": 639,
+    "y": 359,
+    "text": "Business Intelligence"
+  },
+  {
+    "x": 639,
+    "y": 402,
+    "text": "Algorithms & AI Engines"
+  },
+  {
+    "x": 494,
+    "y": 306,
+    "text": "Customer Analytics"
+  },
+  {
+    "x": 495,
+    "y": 454,
+    "text": "IOT Analytics"
+  },
+  {
+    "x": 206,
+    "y": 380,
+    "text": "Connected Things (Customer)"
+  },
+  {
+    "x": 244,
+    "y": 540,
+    "text": "Connected Things (partner)"
+  },
+  {
+    "x": 335,
+    "y": 484,
+    "text": "OT Systems"
+  },
+  {
+    "x": 460,
+    "y": 570,
+    "text": "Connected Things (Enterprise)"
+  },
+  {
+    "x": 639,
+    "y": 564,
+    "text": "Endpoint Computing"
+  }
+]

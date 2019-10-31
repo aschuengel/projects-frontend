@@ -10,6 +10,10 @@ const routes: Routes = [
     component: MainComponent
   },
   {
+    path: 'nodes',
+    component: MainComponent
+  },
+  {
     path: 'node/:id',
     component: NodeComponent
   },

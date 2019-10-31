@@ -1,0 +1,12 @@
+<div>
+  <svg class="gartner"
+       width="960"
+       height="540">
+    <g transform="scale(0.75, 0.75)">
+      <circle *ngFor="let bullet of bullets" [attr.cx]="bullet.x" [attr.cy]="bullet.y" r="12"
+              [ngClass]="{'bullet-deselected': bullet !== selectedBullet, 'bullet-selected': bullet === selectedBullet}"
+              (click)="selectBullet(bullet)"></circle>
+    </g>
+  </svg>
+</div>
+

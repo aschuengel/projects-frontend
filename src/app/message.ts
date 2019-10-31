@@ -1,6 +1,7 @@
-import {MessageType} from './message-type.enum';
 
 export interface Message {
+  header?: string;
   text: string;
-  type: MessageType;
+  type: string;
+  timeout: number;
 }

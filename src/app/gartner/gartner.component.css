@@ -1,0 +1,18 @@
+.gartner {
+  background-image: url('~/assets/gartner.png');
+  background-size: 100%;
+}
+
+.bullet-deselected {
+  fill: white;
+  stroke: green;
+  stroke-width: 2;
+  cursor: pointer;
+}
+
+.bullet-selected {
+  fill: #28a745;;
+  stroke: green;
+  stroke-width: 2;
+  cursor: pointer;
+}

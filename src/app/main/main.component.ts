@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BackendService} from '../backend.service';
 import {Node} from '../node';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -10,7 +11,7 @@ import {Node} from '../node';
 export class MainComponent implements OnInit {
   private nodes: Node[];
 
-  constructor(private backend: BackendService) {
+  constructor(private backend: BackendService, private router: Router) {
   }
 
   ngOnInit() {
@@ -19,5 +20,4 @@ export class MainComponent implements OnInit {
       console.log(nodes);
     });
   }
-
 }

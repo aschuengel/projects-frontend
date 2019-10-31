@@ -1,6 +1,8 @@
-<app-navbar></app-navbar>
 <div class="container">
-  <button type="button" class="btn-success btn btn-sm">Add</button>
+  <h1>Nodes</h1>
+  <app-messages></app-messages>
+  <button type="button" class="btn-success btn btn-sm" [routerLink]="['/new-node']"><i class="fas fa-plus"></i> Add
+  </button>
   <p>
   <table class="table table-striped">
     <thead>
@@ -12,8 +14,8 @@
     </thead>
     <tbody>
     <tr *ngFor="let node of nodes">
-      <td><a [href]="'node/' + node.id">{{node.id}}</a></td>
-      <td>{{node.name}}</td>
+      <td><a [routerLink]="['/node', node.id]"><small>{{node.id}}</small></a></td>
+      <td><a [routerLink]="['/node', node.id]">{{node.name}}</a></td>
       <td>{{node.type}}</td>
     </tr>
     </tbody>
